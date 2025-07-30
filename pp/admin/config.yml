@@ -8,9 +8,9 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# Site URL (replace with your actual Netlify URL)
-site_url: https://your-site-name.netlify.app
-display_url: https://your-site-name.netlify.app
+# Site URL (replace with your actual Netlify URL after deployment)
+site_url: https://bdhir2003-007.netlify.app
+display_url: https://bdhir2003-007.netlify.app
 
 # Logo for the CMS (optional)
 # logo_url: https://your-site-name.netlify.app/images/logo.png
