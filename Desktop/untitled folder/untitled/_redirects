@@ -1,16 +1,11 @@
-# Disable Netlify Identity completely - Direct access to admin panel (no password)
+# Netlify CMS redirects - DIRECT TO REAL CMS
+/admin              /admin/index.html   200
+/admin/             /admin/index.html   200  
+/admin/*            /admin/index.html   200
 
-# Override any existing Netlify Identity redirects
-/.netlify/identity/*  /admin.html  301!
-
-# Override Netlify Identity invite acceptances  
-/admin/accept-invite  /admin.html  301!
-
-# Override Netlify Identity login attempts
-/admin/login  /admin.html  301!
-
-# Main admin redirect to admin panel (no login required)
-/admin  /admin.html  200
+# Enable Git Gateway for Netlify CMS
+/.netlify/git/*     /admin/index.html   200
+/admin-login.html   /admin/index.html   301
 
 # Admin panel direct access
 /admin-panel  /admin.html  200

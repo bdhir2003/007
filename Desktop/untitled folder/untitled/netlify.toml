@@ -1,4 +1,4 @@
-# Netlify Configuration for Student Portfolio
+# Netlify Configuration for Student Portfolio with Netlify CMS
 # This connects your GitHub repository to Netlify for auto-deployment
 
 # Build settings
@@ -8,16 +8,17 @@
   
 # GitHub integration - automatic deployment
 [build.environment]
-  # This ensures Netlify pulls from your GitHub repo
   NODE_VERSION = "18"
-  # CRITICAL: Disable Netlify Identity completely
-  NETLIFY_IDENTITY_ENABLED = "false"
 
-# OVERRIDE all Netlify Identity redirects - FORCE our custom admin
+# Enable Git Gateway for Netlify CMS
+[build.processing]
+  skip_processing = false
+
+# Netlify CMS redirects
 [[redirects]]
-  from = "/.netlify/identity/*"
-  to = "/admin-login.html"
-  status = 301
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
   force = true
 
 [[redirects]]

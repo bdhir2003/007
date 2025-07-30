@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="disable-netlify-identity.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -50,9 +50,9 @@
     <!-- Home Section -->
     <section id="home" class="home">
         <div class="home-content">
-            <h1>Hello, I'm <span class="highlight" id="homeName"><!-- Name will be loaded from admin panel --></span></h1>
-            <p id="homeTitle"><!-- Title will be loaded from admin panel --></p>
-            <p id="homeTagline"><!-- Tagline will be loaded from admin panel --></p>
+            <h1>Hello, I'm <span class="highlight" id="homeName"><!-- Name will be loaded from CMS --></span></h1>
+            <p id="homeTitle"><!-- Title will be loaded from CMS --></p>
+            <p id="homeTagline"><!-- Tagline will be loaded from CMS --></p>
             <p id="homeSubtitle" class="hero-subtitle" style="display: none;"></p>
             <a href="#about" class="btn" id="heroButton">Learn More About Me</a>
         </div>
@@ -67,7 +67,7 @@
                     <img id="profileImage" src="" alt="Profile Picture" class="profile-img" style="display: none;">
                 </div>
                 <div class="about-text">
-                    <p id="aboutDescription"><!-- About description will be loaded from admin panel --></p>
+                    <p id="aboutDescription"><!-- About description will be loaded from CMS --></p>
                 </div>
             </div>
         </div>
@@ -79,6 +79,7 @@
             <h2>Education</h2>
             <div class="education-timeline" id="educationList">
                 <!-- Education items will be dynamically loaded here -->
+            </div>
             </div>
         </div>
     </section>
@@ -157,12 +158,12 @@
                     <div class="contact-info" id="contactInfo">
                         <div class="contact-item">
                             <h3>Email</h3>
-                            <p id="contactEmail"><!-- Email will be loaded from admin panel --></p>
+                            <p id="contactEmail"><!-- Email will be loaded from CMS --></p>
                         </div>
                         
                         <div class="contact-item">
                             <h3>LinkedIn</h3>
-                            <p id="contactLinkedin"><!-- LinkedIn will be loaded from admin panel --></p>
+                            <p id="contactLinkedin"><!-- LinkedIn will be loaded from CMS --></p>
                         </div>
                     </div>
                     
@@ -180,7 +181,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 <span id="footerName"><!-- Name will be loaded from admin panel --></span>. All rights reserved.</p>
+            <p>&copy; 2025 <span id="footerName"><!-- Name will be loaded from CMS --></span>. All rights reserved.</p>
         </div>
     </footer>
 
@@ -188,5 +189,21 @@
     
     <!-- Load static portfolio data if available -->
     <script src="portfolio-data.js"></script>
+    
+    <!-- Netlify CMS Content Loader -->
+    <script src="netlify-cms-loader.js"></script>
+    
+    <!-- Netlify Identity Widget -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
