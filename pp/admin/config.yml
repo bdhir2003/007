@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Local backend for development (uncomment for local testing)
+# local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL (replace with your actual Netlify URL)
+site_url: https://your-site-name.netlify.app
+display_url: https://your-site-name.netlify.app
+
+# Logo for the CMS (optional)
+# logo_url: https://your-site-name.netlify.app/images/logo.png
+
+# Editor configuration
+editor:
+  preview: true
+
+# Show preview links
+show_preview_links: true
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Technologies", name: "technologies", widget: "list", default: [] }
+      - { label: "Live Demo URL", name: "demo_url", widget: "string", required: false }
+      - { label: "GitHub URL", name: "github_url", widget: "string", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "_data/about.yml"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "markdown" }
+          - { label: "Profile Image", name: "profile_image", widget: "image" }
+          - { label: "Resume URL", name: "resume_url", widget: "string", required: false }
+          - label: "Skills"
+            name: "skills"
+            widget: "object"
+            fields:
+              - { label: "Frontend", name: "frontend", widget: "list", default: [] }
+              - { label: "Backend", name: "backend", widget: "list", default: [] }
+              - { label: "Tools", name: "tools", widget: "list", default: [] }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "_data/contact.yml"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Location", name: "location", widget: "string", required: false }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "GitHub", name: "github", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
+
+      - label: "Site Settings"
+        name: "settings"
+        file: "_data/settings.yml"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Site Description", name: "description", widget: "text" }
+          - { label: "Your Name", name: "name", widget: "string" }
+          - { label: "Your Title/Role", name: "role", widget: "string" }
+          - { label: "Hero Background Image", name: "hero_bg", widget: "image", required: false }

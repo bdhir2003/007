@@ -1,0 +1,22 @@
+{
+  "name": "student-portfolio",
+  "version": "1.0.0",
+  "description": "A modern student portfolio website with Netlify CMS",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'Build complete - ready for deployment'",
+    "start": "live-server --port=3000",
+    "deploy": "netlify deploy --prod",
+    "netlify:dev": "netlify dev"
+  },
+  "keywords": ["portfolio", "student", "netlify-cms", "website"],
+  "author": "Student Portfolio",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "netlify-cms-app": "^2.15.72"
+  }
+}

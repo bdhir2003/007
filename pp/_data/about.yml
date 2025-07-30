@@ -1,0 +1,43 @@
+title: "About Me"
+description: |
+  I'm a passionate Computer Science student with a love for problem-solving and innovation.
+  Currently in my third year at University, I'm constantly exploring new technologies
+  and working on exciting projects.
+
+  My interests span across web development, software engineering, and emerging technologies.
+  I believe in the power of technology to make a positive impact on the world and am always
+  eager to learn and grow as a developer.
+
+profile_image: "/images/profile-placeholder.jpg"
+resume_url: "/files/resume.pdf"
+
+skills:
+  frontend:
+    - "HTML5"
+    - "CSS3"
+    - "JavaScript"
+    - "React"
+    - "Vue.js"
+    - "TypeScript"
+  backend:
+    - "Node.js"
+    - "Python"
+    - "Java"
+    - "Express.js"
+    - "MongoDB"
+    - "PostgreSQL"
+  tools:
+    - "Git"
+    - "Docker"
+    - "AWS"
+    - "Figma"
+    - "VS Code"
+    - "Linux"
+
+stats:
+  - number: "15+"
+    label: "Projects Completed"
+  - number: "3+"
+    label: "Years Learning"
+  - number: "10+"
+    label: "Technologies"
